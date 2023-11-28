@@ -1,12 +1,13 @@
-import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Login } from './pages/Login';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Routes>
+      <Route index element={<Login />} />
+    </Routes>
   );
 }
 
