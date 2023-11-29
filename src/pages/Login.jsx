@@ -1,4 +1,4 @@
-import loginvideo from "../assets/loginvideo.mp4";
+import loginvideo from "../assets/loginvideo1.mp4";
 import React, { useState } from 'react';
 
 export function Login() {

@@ -19,6 +19,7 @@ export function Details() {
   console.log(game);
 
   if (!game || !game.acf) {
+    // loading animation !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     return <div>Loading...</div>;
   }
   const handleAddToCart = () => {
