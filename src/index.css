@@ -12,6 +12,18 @@ code {
     monospace;
 }
 
+.storeLogo {
+  width: 50px;
+  height: 100%;
+}
+ /*//////////////////// Header ////////////////////*/
+
+.hamburger-icon {
+  color: #333333;
+}
+
+ /*//////////////////// --------- ////////////////////*/
+
  /*//////////////////// LOGIN PAGE ////////////////////*/
 
  .login {
@@ -29,7 +41,8 @@ video {
 }
 
 .cardLogin {
-  border-radius: 1rem;
+  border-radius: .5rem;
+  border: 1px solid grey;
   opacity: calc(.9);
   background-color: #333333;
 }
@@ -46,3 +59,11 @@ video {
 
 
 /*//////////////////// ------------------- ////////////////////*/
+
+ /*//////////////////// CheckoutPage ////////////////////*/
+
+ .errormessage{
+  color: red;
+ }
+
+ /*//////////////////// --------- ////////////////////*/

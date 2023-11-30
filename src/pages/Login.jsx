@@ -43,6 +43,10 @@ export function Login() {
               <div className="cardLogin text-white">
                 <div className="card-body p-4 text-center">
                   <div className="mb-md-5 mt-md-4 pb-5">
+                  <svg className="loginLogo" xmlns="http://www.w3.org/2000/svg" width="107.489" height="85.991" viewBox="0 0 107.489 85.991">
+                    <path id="_8542249_robot_icon" data-name="8542249_robot_icon" d="M5.374,37.621h5.374V69.868H5.374A5.368,5.368,0,0,1,0,64.494V43a5.368,5.368,0,0,1,5.374-5.374ZM91.366,29.56V75.242A10.76,10.76,0,0,1,80.617,85.991H26.872A10.76,10.76,0,0,1,16.123,75.242V29.56A13.432,13.432,0,0,1,29.56,16.123H48.37V5.374a5.374,5.374,0,0,1,10.749,0V16.123H77.93A13.432,13.432,0,0,1,91.366,29.56ZM44.339,43a6.718,6.718,0,1,0-6.718,6.718A6.718,6.718,0,0,0,44.339,43Zm32.247,0a6.718,6.718,0,1,0-6.718,6.718A6.718,6.718,0,0,0,76.586,43Zm30.9,0v21.5a5.368,5.368,0,0,1-5.374,5.374H96.74V37.621h5.374A5.368,5.368,0,0,1,107.489,43Z" transform="translate(0)" fill="#FFF"/>
+                  </svg>
+                  <h2 className="fw-bold mb-2 text-uppercase">Bits and Bots</h2>
                     <h2 className="fw-bold mb-2 text-uppercase">{isRegistering ? 'Register' : 'Login'}</h2>
                     <p className="text-white-50 mb-5">Please enter your login and password!</p>
 
