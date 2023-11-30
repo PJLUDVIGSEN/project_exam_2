@@ -27,7 +27,7 @@ export function Browse() {
               <img src={game.acf.image.url} className="card-img-top" alt="..." />
               <div className="card-body d-flex flex-column justify-content-end">
                 <h5 className="card-title">{game.acf.title}</h5>
-              <p className="card-text">{game.acf.price}</p>
+              <p className="card-text">{game.acf.price},-</p>
               <Link to={`/${game.id}`}>
                 <button className="btn btn-primary btn-dark">More info</button>
             </Link>  
