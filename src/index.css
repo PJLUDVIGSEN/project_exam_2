@@ -1,3 +1,5 @@
+  /*//////////////////// Global ////////////////////*/
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +7,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:darkgrey
+}
+
+.font-syncopate{
+  font-family: 'Syncopate', sans-serif;
+}
+.font-crushed {
+  font-family: 'Crushed', sans-serif;
+}
+.font-kanit {
+  font-family: 'Kanit', sans-serif;
+  text-transform: uppercase;
 }
 
 code {
@@ -12,10 +26,26 @@ code {
     monospace;
 }
 
+.container{
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto;
+}
+
 .storeLogo {
   width: 50px;
   height: 100%;
 }
+
+footer {
+  height: 70px;
+  width: 100%;
+}
+
+ /*//////////////////// --------- ////////////////////*/
+
+
  /*//////////////////// Header ////////////////////*/
 
 .hamburger-icon {

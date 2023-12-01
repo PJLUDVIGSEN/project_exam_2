@@ -28,14 +28,23 @@ export function Details() {
   };
 
   return (
-    <section className="py-5">
-      <h1>{game.acf.title}</h1>
-      <img src={game.acf.image.url} alt={game.acf.title} />
-      <h2>{game.acf.price},- NOK</h2>
-      <p>Description: {game.acf.description}</p>
-      <p>Genre: {game.acf.genre}</p>
-      <button>Buy Now</button>
-      <button onClick={handleAddToCart}>Add to cart</button>
+    <section className="container pb-5 mt-5">
+      <div className="row">
+        <div className="col-md-4">
+        <img className="card-img-top" src={game.acf.image.url} alt={game.acf.title} />
+        </div>
+        <div className="col-md-6">
+        <h1 className="font-syncopate">{game.acf.title}</h1>
+        <div className="d-flex">
+          <h1 className="font-crushed">GENRE: </h1>
+          <h4 className="font-kanit genreclass pt-3">{game.acf.genre}</h4>
+        </div>
+        <h1 className="font-crushed">{game.acf.price},- NOK</h1>
+        <button>Buy Now</button>
+        <button onClick={handleAddToCart}>Add to cart</button>
+        <p className="mt-2 font-kanit">Description: {game.acf.description}</p>
+        </div>
+      </div>
     </section>
   )
 }

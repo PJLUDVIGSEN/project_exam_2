@@ -8,8 +8,11 @@ export function Cart() {
       // Retrieve cart from local storage
       const storedCart = JSON.parse(localStorage.getItem('cart') || '[]');
       setCart(storedCart);
-    }, []);
+      const total = cart.reduce((acc, game) => acc + parseFloat(game.acf.price), 0).toFixed(0);
+      localStorage.setItem('totalPrice', total);
+    }, [cart]);
     const total = cart.reduce((acc, game) => acc + parseFloat(game.acf.price), 0).toFixed(0);
+    
     const removeGame = (index) => {
       const newCart = [...cart];
       newCart.splice(index, 1);
@@ -40,7 +43,15 @@ export function Cart() {
               <h5 className="pt-2">Sub Total: {total},-NOK</h5>
             </div>
             <div className="col-md-12 d-flex justify-content-end">
-              <Link to="/Checkout" className={`btn btn-outline-dark flex-shrink-0 ${cart.length === 0 && 'disabled'}`} type="button">checkout</Link>
+            <Link
+              to={{
+                pathname: "/Checkout",
+                state: { total }
+              }}
+              className={`btn btn-outline-dark flex-shrink-0 ${cart.length === 0 && 'disabled'}`}
+            >
+              Checkout
+            </Link>
             </div>
           </div>
         </>

@@ -1,11 +1,25 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Modal from 'react-modal';
 
 export function Checkout() {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     const navigate = useNavigate();
+    const location = useLocation();
+    const [totalPrice, setTotalPrice] = useState(0);
+
+    useEffect(() => {
+        if (location.state && location.state.total) {
+            setTotalPrice(location.state.total);
+        } else {
+            // Fallback: Fetch total from local storage or handle the missing total case
+            const storedTotal = localStorage.getItem('totalPrice');
+            if (storedTotal) {
+                setTotalPrice(storedTotal);
+            }
+        }
+    }, [location, navigate]);
+
     const [errors, setErrors] = useState({});
     const [formData, setFormData] = useState({
         firstName: '',
@@ -184,6 +198,13 @@ export function Checkout() {
         contentLabel="Payment Confirmation"
         >
         <h2>Confirm Payment</h2>
+        <p>First name:{formData.firstName}</p>
+        <p>Last name: {formData.lastName}</p>
+        <p>Country: {formData.country}</p>
+        <p>Address: {formData.address}</p>
+        <p>Postal code:{formData.postalCode}</p>
+        <p>Town/City: {formData.townCity}</p>
+        <p>Total Price: {totalPrice},-NOK</p>
         <p>Are you sure you want to proceed with the payment?</p>
         <button onClick={confirmPayment} className="btn btn-success">Yes</button>
         <button onClick={() => setIsModalOpen(false)} className="btn btn-danger">No</button>
