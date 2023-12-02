@@ -8,17 +8,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color:#DCDCDC;
+  text-decoration: #333333;
 }
 
 .font-syncopate{
   font-family: 'Syncopate', sans-serif;
+  text-transform: uppercase;
+  text-decoration: #333333;
 }
 .font-crushed {
   font-family: 'Crushed', sans-serif;
+  text-decoration: #333333;
 }
 .font-kanit {
   font-family: 'Kanit', sans-serif;
   text-transform: uppercase;
+  text-decoration: #333333;
 }
 
 code {
@@ -96,6 +101,11 @@ video {
 
 .card {
   background-color: #DCDCDC;
+  border: none;
+}
+
+.card-body {
+  padding: 10px 0px 0px 0px;
 }
 
 
