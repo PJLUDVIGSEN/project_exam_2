@@ -48,7 +48,7 @@ export function Cart() {
                 pathname: "/Checkout",
                 state: { total }
               }}
-              className={`btn btn-outline-dark flex-shrink-0 ${cart.length === 0 && 'disabled'}`}
+              className={`btn btn-success flex-shrink-0 ${cart.length === 0 && 'disabled'}`}
             >
               Checkout
             </Link>

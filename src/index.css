@@ -7,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:darkgrey
+  background-color:#DCDCDC;
 }
 
 .font-syncopate{
@@ -41,6 +41,10 @@ code {
 footer {
   height: 70px;
   width: 100%;
+}
+
+.header {
+  background-color: #DCDCDC;
 }
 
  /*//////////////////// --------- ////////////////////*/
@@ -88,7 +92,13 @@ video {
 }
 
 
-/*//////////////////// ------------------- ////////////////////*/
+ /*//////////////////// Browsepage ////////////////////*/
+
+.card {
+  background-color: #DCDCDC;
+}
+
+
 
  /*//////////////////// CheckoutPage ////////////////////*/
 

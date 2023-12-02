@@ -37,12 +37,12 @@ export function Details() {
         <h1 className="font-syncopate">{game.acf.title}</h1>
         <div className="d-flex">
           <h1 className="font-crushed">GENRE: </h1>
-          <h4 className="font-kanit genreclass pt-3">{game.acf.genre}</h4>
+          <h4 className="font-kanit genreclass pt-3">{game.acf.genre.join(", ")}</h4>
         </div>
         <h1 className="font-crushed">{game.acf.price},- NOK</h1>
-        <button>Buy Now</button>
-        <button onClick={handleAddToCart}>Add to cart</button>
-        <p className="mt-2 font-kanit">Description: {game.acf.description}</p>
+        <button className="btn btn-dark mx-1">Buy Now</button>
+        <button className="btn btn-success mx-1" onClick={handleAddToCart}>Add to cart</button>
+        <p className="mt-2 font-kanit">{game.acf.description}</p>
         </div>
       </div>
     </section>
