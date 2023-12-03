@@ -8,11 +8,17 @@ export function Cart() {
       // Retrieve cart from local storage
       const storedCart = JSON.parse(localStorage.getItem('cart') || '[]');
       setCart(storedCart);
-      const total = cart.reduce((acc, game) => acc + parseFloat(game.acf.price), 0).toFixed(0);
-      localStorage.setItem('totalPrice', total);
-    }, [cart]);
+    }, []);
+
+    // Calculate total when cart changes
     const total = cart.reduce((acc, game) => acc + parseFloat(game.acf.price), 0).toFixed(0);
     
+    useEffect(() => {
+      localStorage.setItem('totalPrice', total);
+      // cartcounter in Header update
+      window.dispatchEvent(new CustomEvent('cartUpdated'));
+    }, [total]);
+
     const removeGame = (index) => {
       const newCart = [...cart];
       newCart.splice(index, 1);
@@ -56,7 +62,7 @@ export function Cart() {
                 pathname: "/Checkout",
                 state: { total }
               }}
-              className={`btn btn-success flex-shrink-0 ${cart.length === 0 && 'disabled'}`}
+              className={`btn btn-success mb-2 flex-shrink-0 ${cart.length === 0 && 'disabled'}`}
             >
               Checkout
             </Link>

@@ -196,7 +196,7 @@ export function Checkout() {
                 {errors.cvc && <p className='errormessage input-group justify-content-center'>{errors.cvc}</p>}
             </div>
             <div className='d-flex justify-content-end'>
-                <button type='submit' onClick={handleSubmit} className="btn btn-success justify-content-end">Next</button>
+                <button type='submit' onClick={handleSubmit} className="btn btn-success justify-content-end mb-2">Next</button>
             </div>
         </form>
         <Modal 
