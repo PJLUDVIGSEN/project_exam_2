@@ -89,7 +89,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Project Management
 - **Gantt Chart**: Please refer to the Gantt chart included in the project documentation for a detailed timeline and milestones.
-- **Tools Used**: React, Bootstrap, CSS pre-processor (specify which one), and React Router.
+- **Tools Used**: React, Bootstrap, CSS pre-processor SASS, and React Router.
 
 ## Authors
 - PJ LUDVIGSEN
