@@ -7,12 +7,13 @@ export function Checkout() {
     const navigate = useNavigate();
     const location = useLocation();
     const [totalPrice, setTotalPrice] = useState(0);
+    const [showConfirmationMessage, setShowConfirmationMessage] = useState(false);
+
 
     useEffect(() => {
         if (location.state && location.state.total) {
             setTotalPrice(location.state.total);
         } else {
-            // Fallback: Fetch total from local storage or handle the missing total case
             const storedTotal = localStorage.getItem('totalPrice');
             if (storedTotal) {
                 setTotalPrice(storedTotal);
@@ -75,6 +76,8 @@ export function Checkout() {
       };
 
     const confirmPayment = () => {
+        
+        setShowConfirmationMessage(true);
         // Empty the cart
         localStorage.setItem('cart', JSON.stringify([]));
 
@@ -82,14 +85,16 @@ export function Checkout() {
         window.dispatchEvent(new CustomEvent('cartUpdated'));
     
         // Redirect to the browse page
-        navigate('/browse');
+        setTimeout(() => {
+            navigate('/browse');
+        }, 5000);
       }
 
     return (
-      <div className="h-100 container cart shipping justify-content-center">
-        <h1>Checkout</h1>
-        <h2>Shipping</h2>
-        <form onSubmit={handleSubmit}>
+      <div className="h-100 container cart shipping">
+        <h1 className='font-syncopate d-flex justify-content-center'>Checkout</h1>
+        <h2 className='font-kanit d-flex justify-content-center'>Shipping</h2>
+        <form className='justify-content-center' onSubmit={handleSubmit}>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">First name:</span>
                 <input 
@@ -99,7 +104,7 @@ export function Checkout() {
                     value={formData.firstName}
                     onChange={handleChange} 
                 />
-                {errors.firstName && <p className='errormessage'>{errors.firstName}</p>}
+                {errors.firstName && <p className='errormessage input-group justify-content-center'>{errors.firstName}</p>}
             </div>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">Last name:</span>
@@ -110,7 +115,7 @@ export function Checkout() {
                     value={formData.lastName}
                     onChange={handleChange} 
                 />
-                {errors.lastName && <p className='errormessage'>{errors.lastName}</p>}
+                {errors.lastName && <p className='errormessage input-group justify-content-center'>{errors.lastName}</p>}
             </div>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">Country:</span>
@@ -121,7 +126,7 @@ export function Checkout() {
                     value={formData.country}
                     onChange={handleChange} 
                 />
-                {errors.country && <p className='errormessage'>{errors.country}</p>}
+                {errors.country && <p className='errormessage input-group justify-content-center'>{errors.country}</p>}
             </div>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">Address:</span>
@@ -132,7 +137,7 @@ export function Checkout() {
                     value={formData.address}
                     onChange={handleChange} 
                 />
-                {errors.address && <p className='errormessage'>{errors.address}</p>}
+                {errors.address && <p className='errormessage input-group justify-content-center'>{errors.address}</p>}
             </div>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">Postal code:</span>
@@ -143,7 +148,7 @@ export function Checkout() {
                     value={formData.postalCode}
                     onChange={handleChange} 
                 />
-                {errors.postalCode && <p className='errormessage'>{errors.postalCode}</p>}
+                {errors.postalCode && <p className='errormessage input-group justify-content-center'>{errors.postalCode}</p>}
             </div>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">Town/City:</span>
@@ -154,9 +159,9 @@ export function Checkout() {
                     value={formData.townCity}
                     onChange={handleChange} 
                 />
-                {errors.townCity && <p className='errormessage'>{errors.townCity}</p>}
+                {errors.townCity && <p className='errormessage input-group justify-content-center'>{errors.townCity}</p>}
             </div>
-        <h3>Payment</h3>
+        <h3 className='font-kanit d-flex justify-content-center'>Payment</h3>
         <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">Card number:</span>
                 <input 
@@ -166,7 +171,7 @@ export function Checkout() {
                     value={formData.cardNumber}
                     onChange={handleChange} 
                 />
-                {errors.cardNumber && <p className='errormessage'>{errors.cardNumber}</p>}
+                {errors.cardNumber && <p className='errormessage input-group justify-content-center'>{errors.cardNumber}</p>}
             </div>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">Expiration (MM/YY):</span>
@@ -177,7 +182,7 @@ export function Checkout() {
                     value={formData.expiration}
                     onChange={handleChange} 
                 />
-                {errors.expiration && <p className='errormessage'>{errors.expiration}</p>}
+                {errors.expiration && <p className='errormessage input-group justify-content-center'>{errors.expiration}</p>}
             </div>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">CVC:</span>
@@ -188,26 +193,35 @@ export function Checkout() {
                     value={formData.cvc}
                     onChange={handleChange} 
                 />
-                {errors.cvc && <p className='errormessage'>{errors.cvc}</p>}
+                {errors.cvc && <p className='errormessage input-group justify-content-center'>{errors.cvc}</p>}
             </div>
-        <button type='submit' onClick={handleSubmit} className="btn btn-dark">Next</button>
+            <div className='d-flex justify-content-end'>
+                <button type='submit' onClick={handleSubmit} className="btn btn-success justify-content-end">Next</button>
+            </div>
         </form>
-        <Modal
+        <Modal 
+        className="ReactModal__Content"
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}
         contentLabel="Payment Confirmation"
         >
-        <h2>Confirm Payment</h2>
-        <p>First name:{formData.firstName}</p>
-        <p>Last name: {formData.lastName}</p>
-        <p>Country: {formData.country}</p>
-        <p>Address: {formData.address}</p>
-        <p>Postal code:{formData.postalCode}</p>
-        <p>Town/City: {formData.townCity}</p>
-        <p>Total Price: {totalPrice},-NOK</p>
-        <p>Are you sure you want to proceed with the payment?</p>
-        <button onClick={confirmPayment} className="btn btn-success">Yes</button>
-        <button onClick={() => setIsModalOpen(false)} className="btn btn-danger">No</button>
+        <h2 className='font-syncopate'>Confirm Payment</h2>
+        <p className='font-kanit'>First name: {formData.firstName}</p>
+        <p className='font-kanit'>Last name: {formData.lastName}</p>
+        <p className='font-kanit'>Country: {formData.country}</p>
+        <p className='font-kanit'>Address: {formData.address}</p>
+        <p className='font-kanit'>Postal code: {formData.postalCode}</p>
+        <p className='font-kanit'>Town/City: {formData.townCity}</p>
+        <h2 className='font-kanit'>Total Price: {totalPrice},-NOK</h2>
+        {showConfirmationMessage && (
+        <div className="confirmation-message">
+            <h2 className='font-kanit text-success'>Thank you for your purchase! Redirecting...</h2>
+        </div>
+        )}
+        <div className='buttons__modal'>
+        <button onClick={confirmPayment} className="btn btn-success btn__modal">Complete</button>
+        <button onClick={() => setIsModalOpen(false)} className="btn btn-danger btn__modal">Go back</button>
+        </div>
         </Modal>
       </div>
     );

@@ -1,7 +1,8 @@
 import { useData } from '../api/useData';
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
+import GenreFilter from "../components/GenreFilter"
+import GameCard from '../components/GameCard';
+import LoadingIndicator from '../components/LoadingIndicator';
 
 export function Browse() {
     const { data, isLoading } = useData(
@@ -26,7 +27,7 @@ export function Browse() {
   }, []);
 
   const handleCartClick = (gameId) => {
-    const updatedCartItems = cartItems.slice(); // Create a copy of the cart items
+    const updatedCartItems = cartItems.slice(); // Copies cart
     const itemInCartIndex = updatedCartItems.findIndex(item => item.id === gameId);
 
     if (itemInCartIndex > -1) {
@@ -37,7 +38,7 @@ export function Browse() {
     }
 
     setCartItems(updatedCartItems); // Update the state
-    localStorage.setItem('cart', JSON.stringify(updatedCartItems)); // Update the local storage
+    localStorage.setItem('cart', JSON.stringify(updatedCartItems)); // Update local storage
     window.dispatchEvent(new CustomEvent('cartUpdated'));
   };
 
@@ -47,58 +48,20 @@ export function Browse() {
   
   if (isLoading) {
     return (
-            <div className="lds-ellipsis justify-content-center">
-                <div></div><div></div><div></div><div></div>
-            </div>
+      <LoadingIndicator />
     );
 }
   return (
   <>
-    <div className="row row-cols-1 row-cols-md-4 g-4 p-4 justify-content-center">
+    <main className="row row-cols-1 row-cols-md-4 g-4 p-4 justify-content-center">
       <div className="input-group mb-3 justify-content-center">
         <input type="search" value={search} onChange={handleSearch} className="form-control search" placeholder="search items..." aria-label="Search items" aria-describedby="basic-addon2" />
       </div>
-      <div className="input-group mb-3 justify-content-center">
-        {genres.map((genre) => (
-          <div className='form-check form-check-inline' key={genre}>
-            <input
-              className='form-check-input'
-              type="checkbox"
-              id={genre}
-              value={genre}
-              checked={selectedGenres.includes(genre)}
-              onChange={(e) => {
-                if (e.target.checked) {
-                  setSelectedGenres((prev) => [...prev, genre]);
-                } else {
-                  setSelectedGenres((prev) => prev.filter((g) => g !== genre));
-                }
-              }}
-            />
-            <label className='form-check-label' htmlFor={genre}>{genre}</label>
-          </div>
-        ))}
-      </div>
+      <GenreFilter genres={genres} selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres} />
         {filteredGames.map((game) => (
-            <div className="card m-2 p-2 d-flex flex-column" key={game.id}>
-        <div className="image-container">
-            <img src={game.acf.image.url} className="card-img-top" alt="..." />
-            <i 
-                className={isInCart(game.id) ? "bi bi-heart-fill cartSymbol" : "bi bi-heart cartSymbol"} 
-                onClick={() => handleCartClick(game.id)}
-            ></i>
-        </div>
-
-              <div className="card-body d-flex flex-column">
-                <h5 className="font-syncopate card-title">{game.acf.title}</h5>
-              <h2 className="font-crushed card-text">{game.acf.price},-</h2>
-              <Link to={`/${game.id}`}>
-                <button className="btn btn-primary btn-dark">More info</button>
-            </Link>
-            </div>
-            </div>
+          <GameCard key={game.id} game={game} isInCart={isInCart} handleCartClick={handleCartClick} />
           ))
         }
-    </div>
+    </main>
   </>);
 }

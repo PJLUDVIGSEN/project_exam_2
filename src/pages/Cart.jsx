@@ -24,7 +24,7 @@ export function Cart() {
   
   return (
     <div className="container cart justify-content-center">
-      <h1>Cart</h1>
+      <h1 className="font-syncopate d-flex justify-content-center">Cart</h1>
       {cart.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (
