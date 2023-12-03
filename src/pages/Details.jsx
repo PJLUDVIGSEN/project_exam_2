@@ -26,7 +26,7 @@ export function Details() {
   };
 
   return (
-    <section className="container pb-5 mt-5">
+    <section className="container d-flex flex-column min-vh-100 pb-5 mt-5">
       <div className="row">
         <div className="col-md-4">
         <img className="card-img-top" src={game.acf.image.url} alt={game.acf.title} />
@@ -35,7 +35,7 @@ export function Details() {
         <h1 className="font-syncopate">{game.acf.title}</h1>
         <div className="d-flex">
           <h1 className="font-crushed">GENRE: </h1>
-          <h4 className="font-kanit genreclass pt-3">{game.acf.genre.join(", ")}</h4>
+          <h4 className="font-kanit genreclass pt-2">{game.acf.genre.join(", ")}</h4>
         </div>
         <h1 className="font-crushed">{game.acf.price},- NOK</h1>
         <button className="btn btn-dark mx-1" onClick={handleBuyNow}>Buy Now</button>

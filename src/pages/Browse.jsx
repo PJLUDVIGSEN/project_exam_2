@@ -39,7 +39,7 @@ export function Browse() {
 
     setCartItems(updatedCartItems); // Update the state
     localStorage.setItem('cart', JSON.stringify(updatedCartItems)); // Update local storage
-    window.dispatchEvent(new CustomEvent('cartUpdated'));
+    window.dispatchEvent(new CustomEvent('cartUpdated')); // update cartcounter in Header
   };
 
   const isInCart = (gameId) => {

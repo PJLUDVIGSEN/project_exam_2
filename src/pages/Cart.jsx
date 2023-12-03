@@ -23,10 +23,10 @@ export function Cart() {
     };
   
   return (
-    <div className="container cart justify-content-center">
+    <div className="container cart d-flex flex-column min-vh-100 justify-content-center">
       <h1 className="font-syncopate d-flex justify-content-center">Cart</h1>
       {cart.length === 0 ? (
-        <p>Your cart is empty</p>
+        <p className="font-kanit d-flex justify-content-center">Your cart is empty</p>
       ) : (
         <>
           <ul className="list-group">

@@ -7,6 +7,13 @@ export function Login() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isRegistering, setIsRegistering] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const [registrationSuccess, setRegistrationSuccess] = useState(false);
+
+  const validateEmail = (email) => {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  };
 
   const handleLoginClick = () => {
     setIsRegistering(false);
@@ -21,17 +28,39 @@ export function Login() {
 
   const handleRegisterClick = () => {
     setErrorMessage('');
+    setSuccessMessage('');
+
     if (isRegistering) {
+      // Check for valid email
+      if (!validateEmail(email)) {
+        setErrorMessage('Please enter a valid email address');
+        return;
+      }
+
+      // Check for non-empty password
+      if (!password || !confirmPassword) {
+        setErrorMessage('Please enter all required fields');
+        return;
+      }
+
+      // Check if passwords match
       if (password === confirmPassword) {
         localStorage.setItem(email, password);
         console.log('Registration successful');
+        setSuccessMessage('Registration successful');
+        setRegistrationSuccess(true);
         setIsRegistering(false);
       } else {
-        console.log('Passwords do not match');
+        setErrorMessage('Passwords do not match');
       }
     } else {
       setIsRegistering(true);
+      setRegistrationSuccess(false);
     }
+  };
+  // Function to determine button class
+  const loginButtonClassChange = () => {
+    return registrationSuccess ? "login-button btn btn-outline-success btn-lg m-2 px-4" : "login-button btn btn-outline-light btn-lg m-2 px-4";
   };
   return (
     <div className="login">
@@ -67,14 +96,10 @@ export function Login() {
                       </div>
                     )}
                     {errorMessage && <p className="text-danger">{errorMessage}</p>}
-                    <button className="btn btn-outline-light btn-lg m-2 px-4" type="button" onClick={handleLoginClick}>Login</button>
+                    {successMessage && <p className="font-kanit text-success">{successMessage}</p>}
+                    <button className={loginButtonClassChange()} type="button" onClick={handleLoginClick}>Login</button>
                     <button className="btn btn-outline-light btn-lg m-2 px-4" type="button" onClick={handleRegisterClick}>{isRegistering ? 'Register Account' : 'Register Now'}</button>
                   </div>
-
-                  <div>
-                    <p className="mb-0">Don't have an account? <a href="#!" className="text-white-50 fw-bold">Sign Up</a></p>
-                  </div>
-
                 </div>
               </div>
             </div>

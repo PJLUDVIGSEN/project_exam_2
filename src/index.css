@@ -7,8 +7,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:#DCDCDC;
+  background-color:#D5D5D5;
   text-decoration: #333333;
+}
+
+body, html {
+  min-height: 100vh;
 }
 
 .font-syncopate{
@@ -44,12 +48,17 @@ code {
 }
 
 footer {
-  height: 70px;
   width: 100%;
+  height: 150px;
+  background-color: #333333;
+}
+
+.footerLogo{
+  padding-top: 20px;
 }
 
 .header {
-  background-color: #DCDCDC;
+  background-color: #D5D5D5;
 }
 
 .loading-indicator {
