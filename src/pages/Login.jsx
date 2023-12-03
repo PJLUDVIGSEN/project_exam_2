@@ -98,7 +98,7 @@ export function Login() {
                     {errorMessage && <p className="text-danger">{errorMessage}</p>}
                     {successMessage && <p className="font-kanit text-success">{successMessage}</p>}
                     <button className={loginButtonClassChange()} type="button" onClick={handleLoginClick}>Login</button>
-                    <button className="btn btn-outline-light btn-sm m-2 px-4" type="button" onClick={handleRegisterClick}>{isRegistering ? 'Register Account' : 'Register Now'}</button>
+                    <button className="btn btn-outline-light btn-sm m-2 px-4" type="button" onClick={handleRegisterClick}>{isRegistering ? 'Register Account' : 'Register'}</button>
                   </div>
                 </div>
               </div>

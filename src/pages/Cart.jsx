@@ -43,18 +43,20 @@ export function Cart() {
       ) : (
         <>
         <h1 className="font-syncopate d-flex justify-content-center">Cart</h1>
-          <ul className="list-group">
+          <ul className="list-group cart_container">
             {cart.map((game, index) => (
-              <li key={index} className="list-group-item">
-                <h3>{game.acf.title}</h3>
-                <p>Price: {game.acf.price},-</p>
-                <button onClick={() => removeGame(index)} className="btn btn-danger">Remove</button>
+              <li key={index} className="list-group-item cart_item">
+                <h4 className="font-syncopate">{game.acf.title}</h4>
+                <div className="d-flex justify-content-between">
+                <h4 className="font-kanit">{game.acf.price},-</h4>
+                <button onClick={() => removeGame(index)} className="btn btn-outline-danger">Remove</button>
+                </div>
               </li>
             ))}
           </ul>
           <div className="row d-flex">
             <div className="col-md-12 d-flex justify-content-end">
-              <h5 className="pt-2">Sub Total: {total},-NOK</h5>
+              <h5 className="font-kanit pt-2">Sub Total: {total},-NOK</h5>
             </div>
             <div className="col-md-12 d-flex justify-content-end">
             <Link

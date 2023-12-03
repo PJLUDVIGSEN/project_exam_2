@@ -91,7 +91,7 @@ export function Checkout() {
       }
 
     return (
-      <div className="h-100 container cart shipping">
+      <div className="h-100 container cart shipping d-flex flex-column min-vh-100">
         <h1 className='font-syncopate d-flex justify-content-center'>Checkout</h1>
         <h2 className='font-kanit d-flex justify-content-center'>Shipping</h2>
         <form className='justify-content-center' onSubmit={handleSubmit}>
