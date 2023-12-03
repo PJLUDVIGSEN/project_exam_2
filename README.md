@@ -1,23 +1,41 @@
-# Getting Started with Create React App
+# Bits & Bots Video Game Store
+![Screenshot of Bits and Bots](https://i.gyazo.com/c2eeecb24f5ddb96a959a4cb6326df60.jpg)
+
+## Project Overview
+Bits & Bots is a responsive video game store website that allows only registered users to browse and purchase games. It features a user authentication system, a game browsing page, and a shopping cart functionality.
+
+## Functional Specification
+- **Landing Page**: A fullscreen video or slideshow with login and registration forms.
+- **User Authentication**: Users can log in or register. Credentials are stored in `localStorage`.
+- **Browse Page**: Users can view a list of games, filter by genres, and add games to their cart.
+- **Details Page**: Detailed information about a specific game, including the option to add it to the cart.
+- **Cart Page**: Displays selected games and allows users to proceed to checkout.
+- **Checkout Page**: A form for user details and payment information, with a confirmation modal.
+- **Common Elements**: Includes a logout button and breadcrumb navigation for ease of use.
+
+## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Prerequisites
+- Node.js
+- npm (Node Package Manager)
 
-In the project directory, you can run:
+### Installation
+1. Clone the repo
+2. Navigate to the project directory
+cd project_exam_2
+3. Install NPM packages
+npm install
+
+
+### Running the Project
+To run the project locally:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Deployment
+For deployment, use:
 
 ### `npm run build`
 
@@ -68,3 +86,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Project Management
+- **Gantt Chart**: Please refer to the Gantt chart included in the project documentation for a detailed timeline and milestones.
+- **Tools Used**: React, Bootstrap, CSS pre-processor (specify which one), and React Router.
+
+## Authors
+- PJ LUDVIGSEN
+
