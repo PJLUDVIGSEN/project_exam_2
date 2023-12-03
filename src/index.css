@@ -119,17 +119,11 @@ footer {
   }
 }
 
-
- /*//////////////////// --------- ////////////////////*/
-
-
  /*//////////////////// Header ////////////////////*/
 
 .hamburger-icon {
   color: #333333;
 }
-
- /*//////////////////// --------- ////////////////////*/
 
  /*//////////////////// LOGIN PAGE ////////////////////*/
 
@@ -186,17 +180,13 @@ video {
 }
 
 .cartSymbol {
-  /* font-size: 2rem;
-  cursor: pointer; */
   position: absolute;
-  top: 5px; /* Adjust as needed */
-  right: 10px; /* Adjust as needed */
+  top: 5px; 
+  right: 10px; 
   color: #ff0000;
-  cursor: pointer; /* Changes the cursor on hover */
+  cursor: pointer;
   font-size: 2rem;
 }
-
-
 
  /*//////////////////// CheckoutPage ////////////////////*/
 
@@ -234,3 +224,11 @@ video {
 
 
  /*//////////////////// --------- ////////////////////*/
+
+
+
+ @media (max-width: 300px) {
+  .loginLogo{
+    max-width: 50px;
+  }
+}

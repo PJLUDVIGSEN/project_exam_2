@@ -60,7 +60,7 @@ export function Login() {
   };
   // Function to determine button class
   const loginButtonClassChange = () => {
-    return registrationSuccess ? "login-button btn btn-outline-success btn-lg m-2 px-4" : "login-button btn btn-outline-light btn-lg m-2 px-4";
+    return registrationSuccess ? "login-button btn btn-outline-success btn-sm m-2 px-4" : "login-button btn btn-outline-light btn-sm m-2 px-4";
   };
   return (
     <div className="login">
@@ -80,25 +80,25 @@ export function Login() {
                     <p className="font-kanit text-white-50 mb-5">Please enter your login and password!</p>
 
                     <div className="form-outline form-white mb-4">
-                      <input type="email" id="typeEmailX" className="form-control form-control-lg" value={email} onChange={(e) => setEmail(e.target.value)} />
+                      <input type="email" id="typeEmailX" className="form-control form-control-sm" value={email} onChange={(e) => setEmail(e.target.value)} />
                       <label className="form-label">Email</label>
                     </div>
 
                     <div className="form-outline form-white mb-4">
-                      <input type="password" id="typePasswordX" className="form-control form-control-lg" value={password} onChange={(e) => setPassword(e.target.value)} />
+                      <input type="password" id="typePasswordX" className="form-control form-control-sm" value={password} onChange={(e) => setPassword(e.target.value)} />
                       <label className="form-label">Password</label>
                     </div>
 
                     {isRegistering && (
                       <div className="form-outline form-white mb-4">
-                        <input type="password" className="form-control form-control-lg" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                        <input type="password" className="form-control form-control-sm" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                         <label className="form-label">Confirm Password</label>
                       </div>
                     )}
                     {errorMessage && <p className="text-danger">{errorMessage}</p>}
                     {successMessage && <p className="font-kanit text-success">{successMessage}</p>}
                     <button className={loginButtonClassChange()} type="button" onClick={handleLoginClick}>Login</button>
-                    <button className="btn btn-outline-light btn-lg m-2 px-4" type="button" onClick={handleRegisterClick}>{isRegistering ? 'Register Account' : 'Register Now'}</button>
+                    <button className="btn btn-outline-light btn-sm m-2 px-4" type="button" onClick={handleRegisterClick}>{isRegistering ? 'Register Account' : 'Register Now'}</button>
                   </div>
                 </div>
               </div>
