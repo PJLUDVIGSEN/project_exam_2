@@ -11,7 +11,7 @@ Bits & Bots is a responsive video game store website that allows only registered
 - **Details Page**: Detailed information about a specific game, including the option to add it to the cart.
 - **Cart Page**: Displays selected games and allows users to proceed to checkout.
 - **Checkout Page**: A form for user details and payment information, with a confirmation modal.
-- **Common Elements**: Includes a logout button and breadcrumb navigation for ease of use.
+- **Common Elements**: Includes a logout button which will clear all information stored in localStorage and redirect the user to the landing page.
 
 ## Getting Started
 
