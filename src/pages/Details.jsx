@@ -20,7 +20,11 @@ export function Details() {
 
   if (!game || !game.acf) {
     // loading animation !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    return <div>Loading...</div>;
+    return (
+      <div className="lds-ellipsis justify-content-center">
+      <div></div><div></div><div></div><div></div>
+      </div>
+    );
   }
   const handleAddToCart = () => {
     addToCart(game);
