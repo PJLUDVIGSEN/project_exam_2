@@ -43,7 +43,6 @@ export function Header() {
                 <line id="Line_6" data-name="Line 6" x2="5.75" y2="5.75" transform="translate(390.449 39.678)" fill="none" stroke="#333333" stroke-linecap="round" stroke-width="3"/>
               </g>
             </svg>
-            <p className="font-syncopate">BROWSE GAMES</p>
           </Link>
       <button className="navbar-toggler hamburger-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon hamburger-icon"></span>
