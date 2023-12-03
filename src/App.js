@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import './index.css'
+import './index.scss'
 import { Login } from './pages/Login';
 import { Browse } from './pages/Browse';
 import { Details } from './pages/Details';

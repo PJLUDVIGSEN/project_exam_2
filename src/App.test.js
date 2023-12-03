@@ -5,5 +5,5 @@ import App from './App';
 test('renders the login page', () => {
   render(<App />);
   const loginElement = screen.getByText(/login/i); 
-  expect(login).toBeInTheDocument();
+  expect(loginElement).toBeInTheDocument();
 });

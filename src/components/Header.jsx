@@ -40,13 +40,13 @@ export function Header() {
       </button>
       <div className="collapse navbar-collapse flex-row-reverse" id="navbarNav">
           <form className="d-flex">
-            <Link to="/cart" className="btn btn-outline-dark m-2" type="submit">
+            <Link to="/cart" className="btn btn-outline-success m-2" type="submit">
               <i className="bi-cart-fill me-1"></i>
               Cart
               <span className="badge bg-dark text-white ms-1 rounded-pill">{cartCount}</span>
             </Link>
           </form>
-          <button onClick={handleLogout} className="btn btn-outline-danger m-2">
+          <button onClick={handleLogout} className="btn btn-danger m-2">
                     Logout
                 </button>
       </div>
