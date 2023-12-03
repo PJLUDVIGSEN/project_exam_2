@@ -24,9 +24,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Installation
 1. Clone the repo
 2. Navigate to the project directory
-cd project_exam_2
-3. Install NPM packages
-npm install
+### `cd project_exam_2`
+4. Install NPM packages
+### `npm install`
 
 
 ### Running the Project
