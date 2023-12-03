@@ -35,7 +35,7 @@ export function Details() {
         <h1 className="font-syncopate">{game.acf.title}</h1>
         <div className="d-flex">
           <h1 className="font-crushed">GENRE: </h1>
-          <h4 className="font-kanit genreclass pt-2">{game.acf.genre.join(", ")}</h4>
+          <h4 className="font-kanit details__genre pt-2">{game.acf.genre.join(", ")}</h4>
         </div>
         <h1 className="font-crushed">{game.acf.price},- NOK</h1>
         <button className="btn btn-dark mx-1" onClick={handleBuyNow}>Buy Now</button>

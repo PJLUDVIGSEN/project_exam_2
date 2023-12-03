@@ -141,14 +141,14 @@ video {
   filter: grayscale();
 }
 
-.cardLogin {
+.login__card {
   border-radius: .5rem;
   border: 1px solid grey;
   opacity: calc(.9);
   background-color: #333333;
 }
 
-.loginContainer {
+.login__container {
   top: 0;
   left: 0;
   width: 100%;
@@ -170,7 +170,7 @@ video {
   padding: 10px 0px 0px 0px;
 }
 
-.image-container {
+.game-card__image-container {
   position: relative;
 }
 
@@ -179,7 +179,7 @@ video {
   height: auto;
 }
 
-.cartSymbol {
+.game-card__cart-symbol {
   position: absolute;
   top: 5px; 
   right: 10px; 
@@ -189,19 +189,19 @@ video {
 }
 
  /*/////////////////////   CartPage   /////////////////////*/
- .cart_container{
+ .cart__container{
   background-color: #D5D5D5;
   border: 1px solid #333333;
   border-radius: .2rem;
  }
- .cart_item {
+ .cart__item {
   background-color: #D5D5D5;
   border-radius: .2rem;
  }
 
  /*//////////////////// CheckoutPage ////////////////////*/
 
- .errormessage{
+ .checkout__error-message{
   color: red;
  }
 
@@ -225,7 +225,7 @@ video {
 }
 
 
-.buttons__modal {
+.checkout__buttons-modal {
   margin: 0 auto;
 }
 

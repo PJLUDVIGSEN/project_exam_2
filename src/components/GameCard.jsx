@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const GameCard = ({ game, isInCart, handleCartClick }) => {
     return (
         <div className="game-card card m-2 p-2 d-flex flex-column">
-            <div className="image-container">
+            <div className="game-card__image-container">
                 <img src={game.acf.image.url} className="card-img-top" alt={game.acf.title} />
                 <i 
-                    className={isInCart(game.id) ? "bi bi-heart-fill cartSymbol" : "bi bi-heart cartSymbol"} 
+                    className={isInCart(game.id) ? "bi bi-heart-fill game-card__cart-symbol" : "bi bi-heart game-card__cart-symbol"} 
                     onClick={() => handleCartClick(game.id)}
                 ></i>
             </div>

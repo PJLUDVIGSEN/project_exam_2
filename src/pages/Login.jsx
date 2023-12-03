@@ -66,10 +66,10 @@ export function Login() {
     <div className="login">
       <video src={loginvideo} autoPlay loop muted></video>
       <section className="vh-100 gradient-custom">
-        <div className="loginContainer py-5 px-5 h-100">
+        <div className="login__container py-5 px-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-              <div className="cardLogin text-white">
+              <div className="login__card text-white">
                 <div className="card-body p-4 text-center">
                   <div className="mb-md-5 mt-md-4 pb-5">
                   <svg className="loginLogo" xmlns="http://www.w3.org/2000/svg" width="107.489" height="85.991" viewBox="0 0 107.489 85.991">

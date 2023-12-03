@@ -43,9 +43,9 @@ export function Cart() {
       ) : (
         <>
         <h1 className="font-syncopate d-flex justify-content-center">Cart</h1>
-          <ul className="list-group cart_container">
+          <ul className="list-group cart__container">
             {cart.map((game, index) => (
-              <li key={index} className="list-group-item cart_item">
+              <li key={index} className="list-group-item cart__item">
                 <h4 className="font-syncopate">{game.acf.title}</h4>
                 <div className="d-flex justify-content-between">
                 <h4 className="font-kanit">{game.acf.price},-</h4>

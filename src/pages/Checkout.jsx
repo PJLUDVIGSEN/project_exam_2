@@ -104,7 +104,7 @@ export function Checkout() {
                     value={formData.firstName}
                     onChange={handleChange} 
                 />
-                {errors.firstName && <p className='errormessage input-group justify-content-center'>{errors.firstName}</p>}
+                {errors.firstName && <p className='checkout__error-message input-group justify-content-center'>{errors.firstName}</p>}
             </div>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">Last name:</span>
@@ -115,7 +115,7 @@ export function Checkout() {
                     value={formData.lastName}
                     onChange={handleChange} 
                 />
-                {errors.lastName && <p className='errormessage input-group justify-content-center'>{errors.lastName}</p>}
+                {errors.lastName && <p className='checkout__error-message input-group justify-content-center'>{errors.lastName}</p>}
             </div>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">Country:</span>
@@ -126,7 +126,7 @@ export function Checkout() {
                     value={formData.country}
                     onChange={handleChange} 
                 />
-                {errors.country && <p className='errormessage input-group justify-content-center'>{errors.country}</p>}
+                {errors.country && <p className='checkout__error-message input-group justify-content-center'>{errors.country}</p>}
             </div>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">Address:</span>
@@ -137,7 +137,7 @@ export function Checkout() {
                     value={formData.address}
                     onChange={handleChange} 
                 />
-                {errors.address && <p className='errormessage input-group justify-content-center'>{errors.address}</p>}
+                {errors.address && <p className='checkout__error-message input-group justify-content-center'>{errors.address}</p>}
             </div>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">Postal code:</span>
@@ -148,7 +148,7 @@ export function Checkout() {
                     value={formData.postalCode}
                     onChange={handleChange} 
                 />
-                {errors.postalCode && <p className='errormessage input-group justify-content-center'>{errors.postalCode}</p>}
+                {errors.postalCode && <p className='checkout__error-message input-group justify-content-center'>{errors.postalCode}</p>}
             </div>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">Town/City:</span>
@@ -159,7 +159,7 @@ export function Checkout() {
                     value={formData.townCity}
                     onChange={handleChange} 
                 />
-                {errors.townCity && <p className='errormessage input-group justify-content-center'>{errors.townCity}</p>}
+                {errors.townCity && <p className='checkout__error-message input-group justify-content-center'>{errors.townCity}</p>}
             </div>
         <h3 className='font-kanit d-flex justify-content-center'>Payment</h3>
         <div className="input-group input-group-sm mb-3">
@@ -171,7 +171,7 @@ export function Checkout() {
                     value={formData.cardNumber}
                     onChange={handleChange} 
                 />
-                {errors.cardNumber && <p className='errormessage input-group justify-content-center'>{errors.cardNumber}</p>}
+                {errors.cardNumber && <p className='checkout__error-message input-group justify-content-center'>{errors.cardNumber}</p>}
             </div>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">Expiration (MM/YY):</span>
@@ -182,7 +182,7 @@ export function Checkout() {
                     value={formData.expiration}
                     onChange={handleChange} 
                 />
-                {errors.expiration && <p className='errormessage input-group justify-content-center'>{errors.expiration}</p>}
+                {errors.expiration && <p className='checkout__error-message input-group justify-content-center'>{errors.expiration}</p>}
             </div>
             <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text">CVC:</span>
@@ -193,7 +193,7 @@ export function Checkout() {
                     value={formData.cvc}
                     onChange={handleChange} 
                 />
-                {errors.cvc && <p className='errormessage input-group justify-content-center'>{errors.cvc}</p>}
+                {errors.cvc && <p className='checkout__error-message input-group justify-content-center'>{errors.cvc}</p>}
             </div>
             <div className='d-flex justify-content-end'>
                 <button type='submit' onClick={handleSubmit} className="btn btn-success justify-content-end mb-2">Next</button>
@@ -218,7 +218,7 @@ export function Checkout() {
             <h2 className='font-kanit text-success'>Thank you for your purchase! Redirecting...</h2>
         </div>
         )}
-        <div className='buttons__modal'>
+        <div className='checkout__buttons-modal'>
         <button onClick={confirmPayment} className="btn btn-success btn__modal">Complete</button>
         <button onClick={() => setIsModalOpen(false)} className="btn btn-danger btn__modal">Go back</button>
         </div>
